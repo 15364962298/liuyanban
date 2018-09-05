@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加表单</title>
+    <style>
+        .box{
+            padding-top: 20px;
+            width:382px;
+            padding-left: 10px;
+            background: #999;
+            margin:100px auto;
+            padding-bottom: 5px;
+        }
+
+        .btn{
+            width:150px;
+            background: #ff6700;
+            margin:0 auto;
+            text-align: center;
+            color:#fff;
+            cursor: pointer;
+        }
+        .box .add{
+            width:372px;
+            height: 30px;
+            background: #fff;
+            border-bottom: 2px solid #333;
+            color:#333;
+            margin-bottom: 5px;
+            line-height: 30px;
+            font-size: 16px;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <textarea name="" id="" cols="50" rows="10" placeholder="请留言"></textarea>
+       <div class="btn">提交</div>
+    </div>
+</body>
+</html>
+<script>
+    let box=document.querySelector('.box')
+    let textarea=document.querySelector('textarea')
+    let btn=document.querySelector('.btn')
+    btn.onclick=function(){
+
+        let add=document.createElement("div")
+        add.className="add"
+        let text=textarea.value;
+        console.log(text)
+        add.innerText=text
+        console.log( add.innerText)
+        textarea.value=""
+        textarea.focus()
+        box.insertBefore(add,textarea)
+    }
+
+</script>
